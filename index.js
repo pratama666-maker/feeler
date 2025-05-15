@@ -159,6 +159,32 @@ colorPalette.forEach(color => {
         root.style.setProperty('--primary-color-hue', primaryHue);
     })
 })
+//Tambahkan Interaksi JavaScript
+ function checkRequests() {
+    const container = document.querySelector('.friend-requests');
+    if (container.querySelectorAll('.request').length === 0) {
+      container.innerHTML += `<p class="text-muted">No more friend requests.</p>`;
+    }
+  }
+
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      setTimeout(checkRequests, 500);
+    })
+  })
+//Tambahkan Status Kosong Kalau Sudah Tidak Ada Request
+ function checkRequests() {
+    const container = document.querySelector('.friend-requests');
+    if (container.querySelectorAll('.request').length === 0) {
+      container.innerHTML += `<p class="text-muted">No more friend requests.</p>`;
+    }
+  }
+
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      setTimeout(checkRequests, 500);
+    })
+  })
 
 //Theme Background Values
 let lightColorLightness;
