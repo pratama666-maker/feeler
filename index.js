@@ -70,6 +70,69 @@ messageNotification.addEventListener('click', () => {
     }, 2000);
 })
 
+// ----------FRIENDSHIP---------
+
+//Tambahkan Interaksi JavaScript
+ function checkRequests() {
+    const container = document.querySelector('.friend-requests');
+    if (container.querySelectorAll('.request').length === 0) {
+      container.innerHTML += `<p class="text-muted">No more friend requests.</p>`;
+    }
+  }
+
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      setTimeout(checkRequests, 500);
+    })
+  })
+
+//share button
+ document.querySelectorAll('.uil-share-alt').forEach(icon => {
+    icon.addEventListener('click', () => {
+      alert("Link copied to clipboard! 🔗");
+    })
+  })
+
+//bookmar toggle
+ document.querySelectorAll('.uil-bookmark-full').forEach(icon => {
+    icon.addEventListener('click', () => {
+      icon.classList.toggle('bookmarked');
+    })
+  })
+
+//Tambahkan Status Kosong Kalau Sudah Tidak Ada Request
+ function checkRequests() {
+    const container = document.querySelector('.friend-requests');
+    if (container.querySelectorAll('.request').length === 0) {
+      container.innerHTML += `<p class="text-muted">No more friend requests.</p>`;
+    }
+  }
+
+document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      setTimeout(checkRequests, 500);
+    })
+  })
+
+// -------------- COMMENT BOX ---------------
+
+//comment
+  document.querySelectorAll('.uil-comment-dots').forEach(icon => {
+    icon.addEventListener('click', () => {
+      const feed = icon.closest('.feed');
+      let commentBox = feed.querySelector('.comment-box');
+      if (!commentBox) {
+        commentBox = document.createElement('div');
+        commentBox.className = 'comment-box';
+        commentBox.innerHTML = `
+          <input type="text" placeholder="Write a comment..." />
+          <button>Post</button>
+        `;
+        feed.appendChild(commentBox);
+      }
+    })
+  })
+
 // ============== THEME / DISPLAY CUSTOMIZATION ============== 
 
 // Opens Modal
@@ -159,33 +222,8 @@ colorPalette.forEach(color => {
         root.style.setProperty('--primary-color-hue', primaryHue);
     })
 })
-//Tambahkan Interaksi JavaScript
- function checkRequests() {
-    const container = document.querySelector('.friend-requests');
-    if (container.querySelectorAll('.request').length === 0) {
-      container.innerHTML += `<p class="text-muted">No more friend requests.</p>`;
-    }
-  }
 
-  document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      setTimeout(checkRequests, 500);
-    })
-  })
-//Tambahkan Status Kosong Kalau Sudah Tidak Ada Request
- function checkRequests() {
-    const container = document.querySelector('.friend-requests');
-    if (container.querySelectorAll('.request').length === 0) {
-      container.innerHTML += `<p class="text-muted">No more friend requests.</p>`;
-    }
-  }
-
-  document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      setTimeout(checkRequests, 500);
-    })
-  })
-
+  
 //Theme Background Values
 let lightColorLightness;
 let whiteColorLightness;
