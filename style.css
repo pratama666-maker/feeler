@@ -430,6 +430,35 @@ main .container .left .profile {
   .uil-heart.liked {
     color: red;
 }
+ .uil-bookmark-full.bookmarked {
+    color: #ffc107;
+}
+ .comment-box {
+    display: flex;
+    gap: 0.5rem;
+    margin: 10px 0;
+  }
+
+  .comment-box input {
+    flex: 1;
+    padding: 6px 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+  }
+
+  .comment-box button {
+    padding: 6px 14px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .comment-box button:hover {
+    background: #0056b3;
+  }
+
 /* =============== Right ============== */
 main .container .right {
     height: max-content;
